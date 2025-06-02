@@ -1,0 +1,83 @@
+import React from "react";
+import { Link, useNavigate } from "react-router";
+import { Fade, Zoom } from "react-awesome-reveal";
+
+const Groups = ({ groupsData }) => {
+  const navigate = useNavigate();
+  const displayedGroups = groupsData.slice(0, 6);
+  // console.log(groupsData);
+
+  return (
+    <section className="w-11/12 md:w-10/12 mx-auto my-12 text-center">
+      {/* Section Title */}
+      <Fade direction="down" triggerOnce>
+        <h2 className="text-3xl md:text-4xl font-bold text-[#ff0000] mb-8">
+          Explore Our Groups
+        </h2>
+      </Fade>
+
+      {/* Group Cards */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        {displayedGroups.map((group, index) => (
+          <Zoom triggerOnce cascade damping={0.1} key={group._id}>
+            <div className="bg-[#fff5f5] rounded-2xl shadow-md hover:shadow-xl transition duration-300 overflow-hidden text-left">
+              {/* Group Image */}
+              <img
+                src={group.imageUrl}
+                alt={group.groupName}
+                className="w-full h-48 object-cover"
+              />
+              <div className="p-5">
+                <p className="text-sm font-semibold text-[#ff0000] mb-1">
+                  {group.hobbyCategory}
+                </p>
+
+                <h3 className="text-xl font-bold text-gray-800 mb-2">
+                  {group.groupName}
+                </h3>
+
+                <p className="text-gray-700 mb-3 line-clamp-3">
+                  {group.description}
+                </p>
+
+                <div className="flex items-center gap-3 mb-4">
+                  <img
+                    src={group.userPhoto}
+                    alt={group.userName}
+                    className="w-8 h-8 rounded-full object-cover border"
+                  />
+                  <span className="text-sm text-gray-600">
+                    Group Created By:{" "}
+                    <span className="font-medium">{group.userName}</span>
+                  </span>
+                </div>
+
+                <Link to={`/groupDetails/${group._id}`}>
+                  <button className="bg-[#ff0000] text-white py-2 px-4 rounded-full w-full hover:bg-red-600 cursor-pointer transition duration-300">
+                    View Details
+                  </button>
+                </Link>
+              </div>
+            </div>
+          </Zoom>
+        ))}
+      </div>
+
+      {/* View More Button */}
+      {groupsData.length > 6 && (
+        <Fade direction="up" triggerOnce delay={200}>
+          <div className="mt-10">
+            <button
+              onClick={() => navigate("/allGroups")}
+              className="bg-[#ff0000] text-white py-2 px-6 rounded-full hover:bg-red-600 text-lg cursor-pointer transition duration-300"
+            >
+              View More
+            </button>
+          </div>
+        </Fade>
+      )}
+    </section>
+  );
+};
+
+export default Groups;

@@ -1,0 +1,32 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+@import "tailwindcss";
+@plugin "daisyui";
+
+@font-face {
+  font-family: 'Malvie';
+  src: url('/Fonts/Malvie.otf') format('opentype');
+}
+@theme{
+  --font-malvie: 'Malvie', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  @apply bg-white text-black;
+}
+
+.dark body {
+  @apply bg-black text-white;
+}
+
+a.active {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 10px;
+  text-decoration-color: #ff0000;
+  color: #ff0000;
+}
