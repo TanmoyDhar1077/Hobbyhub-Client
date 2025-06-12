@@ -101,7 +101,7 @@ const Navbar = () => {
                 alt="Logo"
                 className="w-10 md:w-13 h-10 md:h-13 rounded-full"
               />
-              <span className="text-2xl md:text-4xl font-bold text-[#ff0000] font-malvie">
+              <span className="hidden sm:inline text-2xl md:text-4xl font-bold text-[#ff0000] font-malvie ">
                 HobbyHub
               </span>
             </Link>
