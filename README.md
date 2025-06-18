@@ -33,7 +33,7 @@ HobbyHub is a dynamic platform designed to connect people through shared interes
 
 ## 📁 Client Repository
 
-🔗 [Client GitHub Repository](https://github.com/Programming-Hero-Web-Course4/b11a10-client-side-TanmoyDhar1077)
+🔗 [Client GitHub Repository](https://github.com/TanmoyDhar1077/Hobbyhub-Client)
 
 Key Technologies:
 - React
@@ -48,7 +48,7 @@ Key Technologies:
 
 ## 🛠️ Server Repository
 
-🔗 [Server GitHub Repository](https://github.com/Programming-Hero-Web-Course4/b11a10-server-side-TanmoyDhar1077)
+🔗 [Server GitHub Repository](https://github.com/TanmoyDhar1077/Hobbyhub-Server)
 
 Key Technologies:
 - Node.js
