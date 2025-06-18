@@ -12,15 +12,13 @@ const MyGroups = () => {
   const allCreatedGroups = useLoaderData();
   const { user } = useContext(AuthContext);
   const [myGroups, setMyGroups] = useState([]);
-  console.log(myGroups);
 
+  // Filter groups created by the logged-in user
   useEffect(() => {
-    if (user?.email) {
-      const filterMyGroups = allCreatedGroups.filter(
-        (groups) => groups.userEmail === user.email
-      );
-      setMyGroups(filterMyGroups);
-    }
+    const filteredGroups = allCreatedGroups.filter(
+      (group) => group?.userEmail === user?.email
+    );
+    setMyGroups(filteredGroups);
   }, [allCreatedGroups, user]);
 
   const handleDelete = (id) => {
@@ -66,58 +64,52 @@ const MyGroups = () => {
       <h2 className="text-3xl font-bold text-center mb-6 text-[#ff0000]">
         My Created Groups
       </h2>
-      {myGroups.length < 0 ? (
-        <p className="text-center text-gray-500">
-          You haven't created any groups yet.
-        </p>
-      ) : (
-        <div className="overflow-x-auto">
-          <table className="min-w-full bg-white shadow-md rounded-lg overflow-hidden">
-            <thead className="bg-[#ff0000] text-white">
-              <tr>
-                <th className="py-3 px-4 text-left">SL.</th>
-                <th className="py-3 px-4 text-left">Group Name</th>
-                <th className="py-3 px-4 text-left">Category</th>
-                <th className="py-3 px-4 text-left">Created By</th>
-                <th className="py-3 px-4 text-left">User Email</th>
-                <th className="py-3 px-4 text-left">Start Date</th>
-                <th className="py-3 px-4 text-left">Actions</th>
+      <div className="overflow-x-auto">
+        <table className="w-11/12 mx-auto bg-white shadow-md rounded-lg overflow-hidden mb-6">
+          <thead className="bg-[#ff0000] text-white">
+            <tr>
+              <th className="py-3 px-4 text-left">SL.</th>
+              <th className="py-3 px-4 text-left">Group Name</th>
+              <th className="py-3 px-4 text-left">Category</th>
+              <th className="py-3 px-4 text-left">Created By</th>
+              <th className="py-3 px-4 text-left">User Email</th>
+              <th className="py-3 px-4 text-left">Start Date</th>
+              <th className="py-3 px-4 text-left">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            {myGroups.map((group, index) => (
+              <tr
+                key={group._id}
+                className="border-t text-[#ff0000] hover:bg-red-50 transition"
+              >
+                <td className="py-3 px-4">{index + 1}</td>
+                <td className="py-3 px-4">{group.groupName}</td>
+                <td className="py-3 px-4">{group.hobbyCategory}</td>
+                <td className="py-3 px-4">{group.userName}</td>
+                <td className="py-3 px-4">{group.userEmail}</td>
+                <td className="py-3 px-4">
+                  {new Date(group.startDate).toLocaleDateString()}
+                </td>
+                <td className="py-3 px-4 space-x-2">
+                  <button
+                    className="bg-blue-600 text-white px-3 py-1 rounded hover:bg-blue-700 cursor-pointer"
+                    onClick={() => navigate(`/updateGroup/${group._id}`)}
+                  >
+                    <FaRegEdit size={20} />
+                  </button>
+                  <button
+                    className="bg-red-600 text-white px-3 py-1 rounded hover:bg-red-700 cursor-pointer"
+                    onClick={() => handleDelete(group._id)}
+                  >
+                    <MdDelete size={20} />
+                  </button>
+                </td>
               </tr>
-            </thead>
-            <tbody>
-              {myGroups.map((group, index) => (
-                <tr
-                  key={group._id}
-                  className="border-t text-[#ff0000] hover:bg-red-50 transition"
-                >
-                  <td className="py-3 px-4">{index + 1}</td>
-                  <td className="py-3 px-4">{group.groupName}</td>
-                  <td className="py-3 px-4">{group.hobbyCategory}</td>
-                  <td className="py-3 px-4">{group.userName}</td>
-                  <td className="py-3 px-4">{group.userEmail}</td>
-                  <td className="py-3 px-4">
-                    {new Date(group.startDate).toLocaleDateString()}
-                  </td>
-                  <td className="py-3 px-4 space-x-2">
-                    <button
-                      className="bg-blue-600 text-white px-3 py-1 rounded hover:bg-blue-700 cursor-pointer"
-                      onClick={() => navigate(`/updateGroup/${group._id}`)}
-                    >
-                      <FaRegEdit size={20} />
-                    </button>
-                    <button
-                      className="bg-red-600 text-white px-3 py-1 rounded hover:bg-red-700 cursor-pointer"
-                      onClick={() => handleDelete(group._id)}
-                    >
-                      <MdDelete size={20} />
-                    </button>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      )}
+            ))}
+          </tbody>
+        </table>
+      </div>
     </section>
   );
 };

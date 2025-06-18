@@ -104,7 +104,7 @@ const Register = () => {
 
   return (
     <section>
-      <div className="flex flex-col items-center justify-center min-h-screen py-2">
+      <div className="flex flex-col items-center justify-center min-h-screen px-4 lg:px-0 py-22 lg:py-0">
         <div className="w-full max-w-6xl bg-white shadow-lg rounded-xl overflow-hidden grid grid-cols-1 md:grid-cols-2 gap-10">
           <div className="md:flex items-center justify-center bg-red-100">
             <img src={signUpImg} alt="SignUp" className="w-full max-w-md" />

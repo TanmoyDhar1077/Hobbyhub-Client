@@ -71,7 +71,7 @@ const Login = () => {
 
   return (
     <section>
-      <div className="flex flex-col items-center justify-center min-h-screen py-2">
+      <div className="flex flex-col items-center justify-center min-h-screen px-4 lg:px-0 py-22 lg:py-0">
         <div className="w-full max-w-6xl bg-white shadow-lg rounded-xl overflow-hidden grid grid-cols-1 md:grid-cols-2 gap-10">
           <div className="md:flex items-center justify-center bg-red-100">
             <img src={signIn} alt="SignIn Logo" className="w-full max-w-md" />
@@ -90,8 +90,6 @@ const Login = () => {
               <input
                 type="email"
                 name="email"
-                // value={email}
-                // onChange={(e) => setEmail(e.target.value)}
                 placeholder="Email"
                 className="w-full border text-red-500 border-red-300 focus:outline-none focus:ring-1 focus:ring-red-300 p-2 rounded-md"
                 required
@@ -100,8 +98,6 @@ const Login = () => {
                 <input
                   type={showPassword ? "text" : "password"}
                   name="password"
-                  //   value={password}
-                  //   onChange={(e) => setPassword(e.target.value)}
                   placeholder="Password"
                   className="w-full  text-red-500 border border-red-300 focus:outline-none focus:ring-1 focus:ring-red-300 p-2 rounded-md"
                   required
@@ -117,10 +113,10 @@ const Login = () => {
                   )}
                 </span>
               </div>
-              <div className="flex justify-between text-sm text-red-500 mt-1">
+              <div className="flex md:flex-col lg:flex-row justify-between text-sm text-red-500 mt-1">
                 <button
                   type="button"
-                  className="hover:underline cursor-pointer"
+                  className="hover:underline cursor-pointer text-start"
                 >
                   Forgot Password?
                 </button>

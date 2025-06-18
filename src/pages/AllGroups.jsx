@@ -9,7 +9,7 @@ const AllGroups = () => {
 
   return (
     <section className="w-11/12 md:w-10/12 mx-auto text-center">
-      <div className="pt-[75px]">
+      <div className="pt-[75px] mb-6">
         {/* Section Title */}
         <h2 className="text-3xl md:text-4xl font-bold text-[#ff0000] mb-8 dark:bg-gray-800 dark:text-white">
           Explore All Hobby Groups

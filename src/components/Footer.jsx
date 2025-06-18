@@ -3,8 +3,8 @@ import { NavLink } from "react-router";
 
 const Footer = () => {
   return (
-    <footer className="py-18 lg:py-24 w-11/12 mx-auto">
-      <div className="flex flex-col items-center justify-center gap-8">
+    <footer className="py-18 lg:py-24 bg-red-50">
+      <div className="w-11/12 mx-auto flex flex-col items-center justify-center gap-8">
         <div className="flex items-center gap-4">
           <img src="/logo.png" alt="logo" className="w-[45px] md:w-[60px]" />
           <h2 className="text-2xl md:text-4xl font-bold text-[#ff0000] font-malvie">

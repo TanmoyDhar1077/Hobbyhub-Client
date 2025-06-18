@@ -9,7 +9,7 @@ const GroupDetails = () => {
 
   return (
     <section className="w-11/12 md:w-10/12 mx-auto">
-      <div className="pt-[80px]">
+      <div className="pt-[80px] mb-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
           {/* Image */}
           <div className="w-full">

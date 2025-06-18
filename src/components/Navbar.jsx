@@ -59,7 +59,7 @@ const Navbar = () => {
               <div
                 tabIndex={0}
                 role="button"
-                className="btn bg-white border border-transparent hover:border-red-500 lg:hidden"
+                className="btn bg-white/30 bg-gradient-to-r from-white/30 to-transparent backdrop-blur-[20px] border border-transparent hover:border-red-500 lg:hidden"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -101,7 +101,7 @@ const Navbar = () => {
                 alt="Logo"
                 className="w-10 md:w-13 h-10 md:h-13 rounded-full"
               />
-              <span className="hidden sm:inline text-2xl md:text-4xl font-bold text-[#ff0000] font-malvie ">
+              <span className="hidden sm:inline text-2xl md:text-4xl font-bold text-[#ff0000] font-malvie">
                 HobbyHub
               </span>
             </Link>
