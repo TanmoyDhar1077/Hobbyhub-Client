@@ -18,10 +18,7 @@ const AllGroups = () => {
         {/* Group Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 text-left">
           {groupsData.map((group) => (
-            <div
-              key={group._id}
-              className="bg-[#fff5f5] rounded-2xl shadow-md hover:shadow-xl transition duration-300 overflow-hidden"
-            >
+            <div className="flex flex-col bg-[#fff5f5] rounded-2xl shadow-md hover:shadow-xl transition duration-300 overflow-hidden text-left">
               {/* Group Image */}
               <img
                 src={group.imageUrl}
@@ -29,33 +26,37 @@ const AllGroups = () => {
                 className="w-full h-48 object-cover"
               />
 
-              <div className="p-5">
-                <p className="text-sm font-semibold text-[#ff0000] mb-1">
-                  {group.hobbyCategory}
-                </p>
+              {/* Card Content */}
+              <div className="p-5 flex flex-col justify-between flex-1">
+                <div>
+                  <p className="text-sm font-semibold text-[#ff0000] mb-1">
+                    {group.hobbyCategory}
+                  </p>
 
-                <h3 className="text-xl font-bold text-gray-800 mb-2">
-                  {group.groupName}
-                </h3>
+                  <h3 className="text-xl font-bold text-gray-800 mb-2">
+                    {group.groupName}
+                  </h3>
 
-                <p className="text-gray-700 mb-3 line-clamp-3">
-                  {group.description}
-                </p>
+                  <p className="text-gray-700 mb-3 line-clamp-2">
+                    {group.description}
+                  </p>
 
-                <div className="flex items-center gap-3 mb-4">
-                  <img
-                    src={group.userPhoto}
-                    alt={group.userName}
-                    className="w-8 h-8 rounded-full object-cover border"
-                  />
-                  <span className="text-sm text-gray-600">
-                    Group Created By:{" "}
-                    <span className="font-medium">{group.userName}</span>
-                  </span>
+                  <div className="flex items-center gap-3 mb-4">
+                    <img
+                      src={group.userPhoto}
+                      alt={group.userName}
+                      className="w-8 h-8 rounded-full object-cover border"
+                    />
+                    <span className="text-sm text-gray-600 line-clamp-1">
+                      Group Created By:{" "}
+                      <span className="font-medium">{group.userName}</span>
+                    </span>
+                  </div>
                 </div>
 
+                {/* Bottom Button */}
                 <Link to={`/groupDetails/${group._id}`}>
-                  <button className="bg-[#ff0000] text-white py-2 px-4 rounded-full w-full hover:bg-red-600 transition duration-300 cursor-pointer">
+                  <button className="mt-auto bg-[#ff0000] text-white py-2 px-4 rounded-full w-full hover:bg-red-600 transition duration-300">
                     View Details
                   </button>
                 </Link>
