@@ -52,7 +52,7 @@ const Navbar = () => {
   };
 
   return (
-    <header className="w-full border-b border-[#C6BDBD] fixed bg-white/30 bg-gradient-to-r from-white/30 to-transparent backdrop-blur-[20px] z-50">
+    <header className="w-full border-b border-[#C6BDBD] fixed bg-white/30 bg-gradient-to-r from-white/30 to-transparent backdrop-blur-[20px] z-50 dark:bg-black dark:text-white">
       <nav className="w-11/12 lg:w-10/12 mx-auto">
         <div className="navbar p-0">
           <div className="navbar-start">
@@ -60,7 +60,7 @@ const Navbar = () => {
               <div
                 tabIndex={0}
                 role="button"
-                className="btn bg-white/30 bg-gradient-to-r from-white/30 to-transparent backdrop-blur-[20px] border border-transparent hover:border-red-500 lg:hidden"
+                className="btn bg-white/30 dark:bg-black/30 bg-gradient-to-r from-white/30 to-transparent dark:from-black/30 dark:to-transparent backdrop-blur-[20px] border border-transparent hover:border-red-500 lg:hidden"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -78,21 +78,42 @@ const Navbar = () => {
                   />
                 </svg>
               </div>
+
               <ul
                 tabIndex={0}
-                className="flex flex-col gap-3 dropdown-content rounded-box bg-white mt-3 w-52 p-2 shadow"
+                className="flex flex-col gap-3 dropdown-content rounded-box bg-white dark:bg-black mt-3 w-52 p-2 shadow"
               >
-                <li className="text-[#ff0000]">
-                  <NavLink to="/">Home</NavLink>
+                <li>
+                  <NavLink
+                    to="/"
+                    className="text-[#ff0000] hover:underline"
+                  >
+                    Home
+                  </NavLink>
                 </li>
-                <li className="text-[#ff0000]">
-                  <NavLink to="/allGroups">All Groups</NavLink>
+                <li>
+                  <NavLink
+                    to="/allGroups"
+                    className="text-[#ff0000] hover:underline"
+                  >
+                    All Groups
+                  </NavLink>
                 </li>
-                <li className="text-[#ff0000]">
-                  <NavLink to="/createGroup">Create Group</NavLink>
+                <li>
+                  <NavLink
+                    to="/createGroup"
+                    className="text-[#ff0000] hover:underline"
+                  >
+                    Create Group
+                  </NavLink>
                 </li>
-                <li className="text-[#ff0000]">
-                  <NavLink to="/myGroups">My Groups</NavLink>
+                <li>
+                  <NavLink
+                    to="/myGroups"
+                    className="text-[#ff0000] hover:underline"
+                  >
+                    My Groups
+                  </NavLink>
                 </li>
               </ul>
             </div>

@@ -39,7 +39,7 @@ const AllGroups = () => {
     <section className="w-11/12 md:w-10/12 mx-auto text-center">
       <div className="pt-[75px] mb-6">
         {/* Section Title */}
-        <h2 className="text-3xl md:text-4xl font-bold text-[#ff0000] mb-4 dark:bg-gray-800 dark:text-white">
+        <h2 className="text-3xl md:text-4xl font-bold text-[#ff0000] mb-4">
           Explore All Hobby Groups
         </h2>
 
@@ -48,7 +48,7 @@ const AllGroups = () => {
           <input
             type="text"
             placeholder="Search by group name..."
-            className="w-full md:w-1/2 border bg-white text-red-500 border-red-300 focus:outline-none focus:ring-1 focus:ring-red-300 p-2 rounded-md"
+            className="w-full md:w-1/2 border bg-white text-red-500 border-red-300 focus:outline-none focus:ring-1 focus:ring-red-300 p-2 rounded-md dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:focus:ring-gray-700"
             value={searchText}
             onChange={(e) => setSearchText(e.target.value)}
           />
@@ -56,7 +56,7 @@ const AllGroups = () => {
           <select
             value={sortOrder}
             onChange={(e) => setSortOrder(e.target.value)}
-            className="border bg-white text-red-500 border-red-300 focus:outline-none focus:ring-1 focus:ring-red-300 p-2 rounded-md cursor-pointer"
+            className="border bg-white text-red-500 border-red-300 focus:outline-none focus:ring-1 focus:ring-red-300 p-2 rounded-md cursor-pointer dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:focus:ring-gray-700"
           >
             <option value="asc">Sort by Date: Oldest First</option>
             <option value="desc">Sort by Date: Newest First</option>

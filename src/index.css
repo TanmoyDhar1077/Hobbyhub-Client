@@ -2,6 +2,8 @@
 @import "tailwindcss";
 @plugin "daisyui";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @font-face {
   font-family: 'Malvie';
   src: url('/Fonts/Malvie.otf') format('opentype');

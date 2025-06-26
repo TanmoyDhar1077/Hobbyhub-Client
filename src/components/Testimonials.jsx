@@ -49,25 +49,25 @@ const Testimonials = () => {
             <p className="text-3xl font-bold text-[#ff0000]">
               <CountUp end={12000} duration={5} separator="," />+
             </p>
-            <p className="text-gray-600">Members</p>
+            <p className="text-gray-600 dark:text-gray-300">Members</p>
           </div>
           <div>
             <p className="text-3xl font-bold text-[#ff0000]">
               <CountUp end={500} duration={5} separator="," />+
             </p>
-            <p className="text-gray-600">Groups Created</p>
+            <p className="text-gray-600 dark:text-gray-300">Groups Created</p>
           </div>
           <div>
             <p className="text-3xl font-bold text-[#ff0000]">
               <CountUp end={4.9} duration={7} decimals={1} />★
             </p>
-            <p className="text-gray-600">Average Rating</p>
+            <p className="text-gray-600 dark:text-gray-300">Average Rating</p>
           </div>
           <div>
             <p className="text-3xl font-bold text-[#ff0000]">
               <CountUp end={50} duration={6} />+
             </p>
-            <p className="text-gray-600">Cities Covered</p>
+            <p className="text-gray-600 dark:text-gray-300">Cities Covered</p>
           </div>
         </div>
       </Zoom>
