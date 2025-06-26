@@ -8,7 +8,6 @@ const CreateGroup = () => {
   const { user } = use(AuthContext);
   // console.log(user);
 
-
   const handleAddGroup = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -19,7 +18,6 @@ const CreateGroup = () => {
     const photoUrl = user.photoURL;
     newGroupData.userPhoto = photoUrl;
     // console.log(newGroupData);
-    
 
     fetch("https://hobbyhub-server-psi.vercel.app/groups", {
       method: "POST",
@@ -37,6 +35,7 @@ const CreateGroup = () => {
             title: "Group Created Successfully",
             text: `Group Name: ${newGroupData.groupName}`,
             showConfirmButton: false,
+            iconColor: "#7fdf4b",
             timer: 1500,
           });
           form.reset();
@@ -50,7 +49,6 @@ const CreateGroup = () => {
           text: `Something went wrong! ${error.message}`,
         });
       });
-      
   };
 
   const hobbyOptions = [

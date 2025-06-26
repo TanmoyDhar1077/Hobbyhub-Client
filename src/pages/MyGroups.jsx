@@ -47,6 +47,7 @@ const MyGroups = () => {
                 text: "Your group has been deleted.",
                 icon: "success",
                 showConfirmButton: false,
+                iconColor: "#7fdf4b",
                 timer: 2000,
               });
               const remainingGroups = myGroups.filter(

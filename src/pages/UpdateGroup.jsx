@@ -44,6 +44,7 @@ const UpdateGroup = () => {
             icon: "success",
             title: "Group Updated Successfully",
             showConfirmButton: false,
+            iconColor: "#7fdf4b",
             timer: 1500,
           });
           navigate("/myGroups");
