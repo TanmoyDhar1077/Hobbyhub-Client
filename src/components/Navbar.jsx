@@ -33,6 +33,7 @@ const Navbar = () => {
             text: "You have been successfully logged out.",
             icon: "success",
             showConfirmButton: false,
+            iconColor: "#7fdf4b",
             // confirmButtonColor: "#ff0000",
             timer: 2000,
           });
@@ -124,14 +125,14 @@ const Navbar = () => {
           </div>
           <div className="navbar-end flex items-center gap-4">
             <button
-            onClick={toggleTheme}
-            className=" text-[#ff0000] hover:text-black dark:hover:text-white cursor-pointer transition duration-300"
-            aria-label="Toggle theme"
-            aria-pressed={isDark ? "true" : "false"}
-            title="Toggle Theme"
-          >
-            {isDark ? <FaSun size={25} /> : <FaMoon size={25} />}
-          </button>
+              onClick={toggleTheme}
+              className=" text-[#ff0000] hover:text-black dark:hover:text-white cursor-pointer transition duration-300"
+              aria-label="Toggle theme"
+              aria-pressed={isDark ? "true" : "false"}
+              title="Toggle Theme"
+            >
+              {isDark ? <FaSun size={25} /> : <FaMoon size={25} />}
+            </button>
             {user ? (
               <>
                 {/* Tooltip with photo */}
