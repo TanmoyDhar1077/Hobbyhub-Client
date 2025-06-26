@@ -5,6 +5,8 @@ import WhyJoin from "../components/WhyJoin";
 import Testimonials from "../components/Testimonials";
 import { useLoaderData } from "react-router";
 import Groups from "../components/Groups";
+import Newsletter from "../components/Newsletter";
+
 
 const Home = () => {
   useTitle("Home");
@@ -16,6 +18,7 @@ const Home = () => {
       <WhyJoin></WhyJoin>
       <Groups groupsData={groupsData}></Groups>
       <Testimonials></Testimonials>
+      <Newsletter></Newsletter>
     </>
   );
 };
