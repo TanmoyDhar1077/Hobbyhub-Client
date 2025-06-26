@@ -58,7 +58,7 @@ const Groups = ({ groupsData }) => {
 
                 {/* Bottom Button */}
                 <Link to={`/groupDetails/${group._id}`}>
-                  <button className="mt-auto bg-[#ff0000] text-white py-2 px-4 rounded-full w-full hover:bg-red-600 transition duration-300">
+                  <button className="mt-auto bg-[#ff0000] text-white py-2 px-4 rounded-full w-full hover:bg-red-600 transition duration-300 cursor-pointer">
                     View Details
                   </button>
                 </Link>
