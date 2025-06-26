@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import useTitle from "../hooks/useTitle";
 import { useLoaderData } from "react-router";
 import { Link } from "react-router";
@@ -7,26 +7,73 @@ const AllGroups = () => {
   useTitle("All Groups");
   const groupsData = useLoaderData();
 
+  const [searchText, setSearchText] = useState("");
+  const [sortOrder, setSortOrder] = useState("asc");
+  const [filteredGroups, setFilteredGroups] = useState([]);
+  
+
+  useEffect(() => {
+    const filtered = groupsData.filter((group) =>
+      group.groupName.toLowerCase().includes(searchText.toLowerCase())
+    );
+
+    filtered.sort((a, b) => {
+      const dateA = new Date(a.startDate);
+      const dateB = new Date(b.startDate);
+      return sortOrder === "asc" ? dateA - dateB : dateB - dateA;
+    });
+
+    setFilteredGroups(filtered);
+  }, [searchText, sortOrder, groupsData]);
+
+  const formatDateToBD = (dateStr) => {
+    const date = new Date(dateStr);
+    const day = date.getDate();
+    const month = date.toLocaleString("en-US", { month: "long" });
+    const year = date.getFullYear();
+    return `${day} ${month}, ${year}`;
+  };
+
   return (
     <section className="w-11/12 md:w-10/12 mx-auto text-center">
       <div className="pt-[75px] mb-6">
         {/* Section Title */}
-        <h2 className="text-3xl md:text-4xl font-bold text-[#ff0000] mb-8 dark:bg-gray-800 dark:text-white">
+        <h2 className="text-3xl md:text-4xl font-bold text-[#ff0000] mb-4 dark:bg-gray-800 dark:text-white">
           Explore All Hobby Groups
         </h2>
 
+        {/* Search and Sort Controls */}
+        <div className="flex flex-col md:flex-row justify-between items-center gap-4 mb-8">
+          <input
+            type="text"
+            placeholder="Search by group name..."
+            className="w-full md:w-1/2 border bg-white text-red-500 border-red-300 focus:outline-none focus:ring-1 focus:ring-red-300 p-2 rounded-md"
+            value={searchText}
+            onChange={(e) => setSearchText(e.target.value)}
+          />
+
+          <select
+            value={sortOrder}
+            onChange={(e) => setSortOrder(e.target.value)}
+            className="border bg-white text-red-500 border-red-300 focus:outline-none focus:ring-1 focus:ring-red-300 p-2 rounded-md hover:bg-red-50 cursor-pointer"
+          >
+            <option value="asc">Sort by Date: Oldest First</option>
+            <option value="desc">Sort by Date: Newest First</option>
+          </select>
+        </div>
+
         {/* Group Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 text-left">
-          {groupsData.map((group) => (
-            <div className="flex flex-col bg-[#fff5f5] rounded-2xl shadow-md hover:shadow-xl transition duration-300 overflow-hidden text-left">
-              {/* Group Image */}
+          {filteredGroups.map((group) => (
+            <div
+              key={group._id}
+              className="flex flex-col bg-[#fff5f5] rounded-2xl shadow-md hover:shadow-xl transition duration-300 overflow-hidden text-left"
+            >
               <img
                 src={group.imageUrl}
                 alt={group.groupName}
                 className="w-full h-48 object-cover"
               />
-
-              {/* Card Content */}
               <div className="p-5 flex flex-col justify-between flex-1">
                 <div>
                   <p className="text-sm font-semibold text-[#ff0000] mb-1">
@@ -39,6 +86,10 @@ const AllGroups = () => {
 
                   <p className="text-gray-700 mb-3 line-clamp-2">
                     {group.description}
+                  </p>
+
+                  <p className="text-gray-600 mb-3">
+                    Starting Date: {formatDateToBD(group.startDate)}
                   </p>
 
                   <div className="flex items-center gap-3 mb-4">
@@ -54,7 +105,6 @@ const AllGroups = () => {
                   </div>
                 </div>
 
-                {/* Bottom Button */}
                 <Link to={`/groupDetails/${group._id}`}>
                   <button className="mt-auto bg-[#ff0000] text-white py-2 px-4 rounded-full w-full hover:bg-red-600 transition duration-300">
                     View Details
@@ -64,6 +114,12 @@ const AllGroups = () => {
             </div>
           ))}
         </div>
+
+        {filteredGroups.length === 0 && (
+          <p className="mt-8 text-gray-500 dark:text-gray-300">
+            No groups found.
+          </p>
+        )}
       </div>
     </section>
   );
