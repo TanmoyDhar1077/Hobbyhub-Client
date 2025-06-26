@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import useTitle from "../hooks/useTitle";
 import { useLoaderData } from "react-router";
 import { Link } from "react-router";
+// import SortDropdown from "../components/SortDropdown";
 
 const AllGroups = () => {
   useTitle("All Groups");
@@ -55,7 +56,7 @@ const AllGroups = () => {
           <select
             value={sortOrder}
             onChange={(e) => setSortOrder(e.target.value)}
-            className="border bg-white text-red-500 border-red-300 focus:outline-none focus:ring-1 focus:ring-red-300 p-2 rounded-md hover:bg-red-50 cursor-pointer"
+            className="border bg-white text-red-500 border-red-300 focus:outline-none focus:ring-1 focus:ring-red-300 p-2 rounded-md cursor-pointer"
           >
             <option value="asc">Sort by Date: Oldest First</option>
             <option value="desc">Sort by Date: Newest First</option>
