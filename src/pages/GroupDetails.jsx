@@ -21,7 +21,7 @@ const GroupDetails = () => {
           </div>
 
           {/* Group Info */}
-          <div className="space-y-4 text-gray-800">
+          <div className="space-y-4 text-gray-800 dark:text-gray-200">
             <h2 className="text-3xl font-bold text-[#ff0000]">
               {group.groupName}
             </h2>
@@ -68,7 +68,7 @@ const GroupDetails = () => {
               />
               <div>
                 <p className="font-semibold">{group.userName}</p>
-                <p className="text-sm text-gray-500">{group.userEmail}</p>
+                <p className="text-sm text-gray-600 dark:text-gray-400">{group.userEmail}</p>
               </div>
             </div>
 
