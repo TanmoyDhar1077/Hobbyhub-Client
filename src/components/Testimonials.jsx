@@ -15,7 +15,7 @@ const Testimonials = () => {
       {/* Testimonial Cards */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         <Flip direction="horizontal" triggerOnce>
-          <div className="bg-[#fff5f5] p-6 rounded-2xl shadow-lg hover:shadow-xl transition duration-300">
+          <div className="bg-[#fff5f5] p-6 rounded-2xl shadow-lg hover:shadow-xl transition duration-300 dark:bg-gray-300">
             <p className="italic text-gray-700 mb-4">
               “Joining a photography group here pushed me to take my hobby seriously. Now I sell prints!”
             </p>
@@ -24,7 +24,7 @@ const Testimonials = () => {
         </Flip>
 
         <Flip direction="vertical" triggerOnce>
-          <div className="bg-[#fff5f5] p-6 rounded-2xl shadow-lg hover:shadow-xl transition duration-300">
+          <div className="bg-[#fff5f5] p-6 rounded-2xl shadow-lg hover:shadow-xl transition duration-300 dark:bg-gray-300">
             <p className="italic text-gray-700 mb-4">
               “My book club not only made me read more but also helped me find lifelong friends.”
             </p>
@@ -33,7 +33,7 @@ const Testimonials = () => {
         </Flip>
 
         <Flip direction="horizontal" triggerOnce>
-          <div className="bg-[#fff5f5] p-6 rounded-2xl shadow-lg hover:shadow-xl transition duration-300">
+          <div className="bg-[#fff5f5] p-6 rounded-2xl shadow-lg hover:shadow-xl transition duration-300 dark:bg-gray-300">
             <p className="italic text-gray-700 mb-4">
               “I never thought gaming meetups could be this fun and productive. Great platform!”
             </p>

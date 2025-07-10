@@ -68,7 +68,7 @@ const AllGroups = () => {
           {filteredGroups.map((group) => (
             <div
               key={group._id}
-              className="flex flex-col bg-[#fff5f5] rounded-2xl shadow-md hover:shadow-xl transition duration-300 overflow-hidden text-left"
+              className="flex flex-col bg-[#fff5f5] rounded-2xl shadow-md hover:shadow-xl transition duration-300 overflow-hidden text-left dark:bg-gray-300"
             >
               <img
                 src={group.imageUrl}

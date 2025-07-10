@@ -60,7 +60,7 @@ const Newsletter = () => {
             type="email"
             name="email"
             placeholder="Enter your email"
-            className="px-4 py-2 w-full md:w-80 rounded border border-gray-300 focus:outline-[#ff0000] dark:bg-gray-800 dark:border-gray-700 dark:text-white"
+            className="px-4 py-2 w-full md:w-80 rounded border border-gray-300 focus:outline-[#ff0000] dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:focus:outline-gray-700"
             required
           />
           <button

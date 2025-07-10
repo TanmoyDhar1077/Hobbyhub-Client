@@ -13,7 +13,7 @@ const WhyJoin = () => {
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         <Slide direction="left" triggerOnce>
-          <div className="bg-[#fff5f5] p-6 rounded-2xl shadow-lg text-center hover:scale-105 transition-transform">
+          <div className="bg-[#fff5f5] p-6 rounded-2xl shadow-lg text-center hover:scale-105 transition-transform dark:bg-gray-300">
             <FaUsers className="text-4xl text-[#ff0000] mx-auto mb-4" />
             <h3 className="text-xl font-semibold text-gray-700 mb-2">Meet New People</h3>
             <p className="text-gray-700">
@@ -23,7 +23,7 @@ const WhyJoin = () => {
         </Slide>
 
         <Slide direction="up" triggerOnce>
-          <div className="bg-[#fff5f5] p-6 rounded-2xl shadow-lg text-center hover:scale-105 transition-transform">
+          <div className="bg-[#fff5f5] p-6 rounded-2xl shadow-lg text-center hover:scale-105 transition-transform dark:bg-gray-300">
             <FaBrain className="text-4xl text-[#ff0000] mx-auto mb-4" />
             <h3 className="text-xl font-semibold mb-2 text-gray-700">Learn and Grow</h3>
             <p className="text-gray-700">
@@ -33,7 +33,7 @@ const WhyJoin = () => {
         </Slide>
 
         <Slide direction="right" triggerOnce>
-          <div className="bg-[#fff5f5] p-6 rounded-2xl shadow-lg text-center hover:scale-105 transition-transform">
+          <div className="bg-[#fff5f5] p-6 rounded-2xl shadow-lg text-center hover:scale-105 transition-transform dark:bg-gray-300">
             <FaSmile className="text-4xl text-[#ff0000] mx-auto mb-4" />
             <h3 className="text-xl font-semibold text-gray-700 mb-2">Stay Happy</h3>
             <p className="text-gray-700">

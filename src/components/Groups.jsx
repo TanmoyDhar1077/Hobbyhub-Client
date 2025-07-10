@@ -20,7 +20,7 @@ const Groups = ({ groupsData }) => {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {displayedGroups.map((group) => (
           <Zoom triggerOnce cascade damping={0.1} key={group._id}>
-            <div className="flex flex-col bg-[#fff5f5] rounded-2xl shadow-md hover:shadow-xl transition duration-300 overflow-hidden text-left">
+            <div className="flex flex-col bg-[#fff5f5] rounded-2xl shadow-md hover:shadow-xl transition duration-300 overflow-hidden text-left dark:bg-gray-300">
               {/* Group Image */}
               <img
                 src={group.imageUrl}
