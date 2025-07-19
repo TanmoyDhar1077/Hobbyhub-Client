@@ -17,6 +17,8 @@ const Newsletter = () => {
         title: "Invalid Email",
         text: "Please enter a valid email address.",
         confirmButtonColor: "#ff0000",
+        background: document.documentElement.classList.contains('dark') ? "#1f2937" : "#fff",
+        color: document.documentElement.classList.contains('dark') ? "#fff" : "#333",
       });
       return;
     }
@@ -28,6 +30,8 @@ const Newsletter = () => {
       timer: 2000,
       showConfirmButton: false,
       iconColor: "#7fdf4b",
+      background: document.documentElement.classList.contains('dark') ? "#1f2937" : "#fff",
+      color: document.documentElement.classList.contains('dark') ? "#fff" : "#333",
     });
 
     e.target.reset();
@@ -37,12 +41,12 @@ const Newsletter = () => {
     <section className="w-11/12 md:w-10/12 mx-auto my-12 text-center">
       <Zoom triggerOnce>
         <div className="flex justify-center mb-4">
-          <FaEnvelopeOpenText className="text-4xl text-[#ff0000]" />
+          <FaEnvelopeOpenText className="text-4xl text-[#ff0000] dark:text-white" />
         </div>
       </Zoom>
 
       <Fade direction="left" cascade damping={0.1} triggerOnce>
-        <h2 className="text-3xl md:text-4xl font-bold text-[#ff0000] mb-2">
+        <h2 className="text-3xl md:text-4xl font-bold text-[#ff0000] dark:text-white mb-2">
           Join Our Newsletter
         </h2>
         <p className="text-gray-600 dark:text-gray-300 mb-6">
@@ -60,12 +64,12 @@ const Newsletter = () => {
             type="email"
             name="email"
             placeholder="Enter your email"
-            className="px-4 py-2 w-full md:w-80 rounded border border-gray-300 focus:outline-[#ff0000] dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:focus:outline-gray-700"
+            className="px-4 py-2 w-full md:w-80 rounded border border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-[#ff0000] bg-white dark:bg-gray-800 text-black dark:text-white placeholder-gray-500 dark:placeholder-gray-400"
             required
           />
           <button
             type="submit"
-            className="bg-[#ff0000] text-white px-6 py-2 rounded hover:bg-white hover:text-[#ff0000] border border-[#ff0000] transition duration-300 cursor-pointer"
+            className="bg-[#ff0000] text-white px-6 py-2 rounded hover:bg-white hover:text-[#ff0000] dark:bg-gray-700 dark:hover:bg-gray-800 dark:hover:text-white border border-[#ff0000] dark:border-gray-600 transition duration-300 cursor-pointer"
           >
             Subscribe
           </button>

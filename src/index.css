@@ -18,11 +18,60 @@ html {
 
 body {
   font-family: "Open Sans", sans-serif;
-  @apply bg-white text-black;
+  @apply bg-white text-black transition-colors duration-300;
 }
 
 .dark body {
-  @apply bg-black text-white;
+  @apply bg-gray-900 text-white;
+}
+
+/* Dark mode for forms */
+.dark input,
+.dark textarea,
+.dark select {
+  @apply bg-gray-800 text-white border-gray-600;
+}
+
+.dark input:focus,
+.dark textarea:focus,
+.dark select:focus {
+  @apply border-red-500 ring-red-500;
+}
+
+/* Dark mode for DaisyUI components */
+.dark .card {
+  @apply bg-gray-800 border-gray-700;
+}
+
+.dark .modal-box {
+  @apply bg-gray-800 text-white;
+}
+
+.dark .dropdown-content {
+  @apply bg-gray-800 border-gray-700;
+}
+
+.dark .btn:not(.btn-primary):not(.btn-secondary):not(.btn-accent) {
+  @apply bg-gray-700 text-white border-gray-600 hover:bg-gray-600;
+}
+
+/* Dark mode for navbar and footer */
+.dark .navbar {
+  @apply bg-gray-900 border-gray-700;
+}
+
+.dark .footer {
+  @apply bg-gray-900 text-white;
+}
+
+/* Dark mode for tables */
+.dark .table {
+  @apply bg-gray-800;
+}
+
+.dark .table th,
+.dark .table td {
+  @apply border-gray-700;
 }
 
 a.active {
@@ -31,4 +80,26 @@ a.active {
   text-underline-offset: 10px;
   text-decoration-color: #ff0000;
   color: #ff0000;
+}
+
+.dark a.active {
+  text-decoration-color: #ffffff;
+  color: #ffffff;
+}
+
+/* Custom scrollbar for dark mode */
+.dark ::-webkit-scrollbar {
+  width: 8px;
+}
+
+.dark ::-webkit-scrollbar-track {
+  @apply bg-gray-800;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  @apply bg-gray-600 rounded;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-500;
 }

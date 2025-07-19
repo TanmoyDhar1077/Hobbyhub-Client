@@ -40,11 +40,11 @@ const Banner = () => {
                 src={slide}
                 alt={`Banner ${index + 1}`}
               />
-              <div className="absolute inset-0 bg-black/50 flex items-center justify-center text-center text-white p-4">
+              <div className="absolute inset-0 bg-black/50 dark:bg-black/70 flex items-center justify-center text-center text-white p-4">
                 <div className="w-full max-w-5xl">
-                  <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4 animate-fade-in-up">Connect Create Cultivate Your Passion
+                  <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4 animate-fade-in-up dark:text-white">Connect Create Cultivate Your Passion
                   </h1>
-                  <p className="text-sm sm:text-base md:text-lg lg:text-xl animate-fade-in-up animate-delay-300">
+                  <p className="text-sm sm:text-base md:text-lg lg:text-xl animate-fade-in-up animate-delay-300 dark:text-gray-200">
                     HobbyHub helps you discover, join, or create local hobby groups — from book clubs to hiking crews.  Connect with like-minded people, share your passions, and build real communities around what you love
                   </p>
                 </div>

@@ -13,13 +13,13 @@ const Root = () => {
   }
 
   return (
-    <>
+    <div className="bg-white dark:bg-gray-900 min-h-screen">
       <Navbar></Navbar>
       <main className="min-h-[calc(100vh-415px)]">
         <Outlet />
       </main>
       <Footer></Footer>
-    </>
+    </div>
   );
 };
 

@@ -13,13 +13,13 @@ const Home = () => {
   const groupsData = useLoaderData();
  
   return (
-    <>
+    <div className="bg-white dark:bg-gray-900 min-h-screen">
       <Banner></Banner>
       <WhyJoin></WhyJoin>
       <Groups groupsData={groupsData}></Groups>
       <Testimonials></Testimonials>
       <Newsletter></Newsletter>
-    </>
+    </div>
   );
 };
 

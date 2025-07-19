@@ -46,6 +46,8 @@ const UpdateGroup = () => {
             showConfirmButton: false,
             iconColor: "#7fdf4b",
             timer: 1500,
+            background: document.documentElement.classList.contains('dark') ? '#374151' : '#ffffff',
+            color: document.documentElement.classList.contains('dark') ? '#ffffff' : '#333333',
           });
           navigate("/myGroups");
         }
@@ -81,8 +83,8 @@ const UpdateGroup = () => {
 
   return (
     <div className="pt-[65px] w-11/12 lg:w-10/12 mx-auto">
-      <div className="max-w-3xl mx-auto p-6 my-10 bg-red-100 shadow-lg rounded-lg border border-red-200">
-        <h2 className="text-3xl font-bold text-center mb-6 text-[#ff0000]">
+      <div className="max-w-3xl mx-auto p-6 my-10 bg-red-100 dark:bg-gray-800 shadow-lg rounded-lg border border-red-200 dark:border-gray-700">
+        <h2 className="text-3xl font-bold text-center mb-6 text-[#ff0000] dark:text-white">
           Update Hobby Group
         </h2>
         <form onSubmit={handleUpdateGroup} className="grid grid-cols-1 gap-4">
@@ -90,7 +92,7 @@ const UpdateGroup = () => {
             type="text"
             name="groupName"
             defaultValue={groupName}
-            className="w-full border bg-white text-red-500 border-red-300 focus:outline-none focus:ring-1 focus:ring-red-300 p-2 rounded-md"
+            className="w-full border bg-white text-red-500 border-red-300 focus:outline-none focus:ring-1 focus:ring-red-300 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:focus:ring-gray-500 p-2 rounded-md"
             required
           />
 
@@ -98,7 +100,7 @@ const UpdateGroup = () => {
             type="text"
             name="hobbyCategory"
             defaultValue={hobbyCategory}
-            className="w-full border bg-white text-red-500 border-red-300 focus:outline-none focus:ring-1 focus:ring-red-300 p-2 rounded-md"
+            className="w-full border bg-white text-red-500 border-red-300 focus:outline-none focus:ring-1 focus:ring-red-300 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:focus:ring-gray-500 p-2 rounded-md"
             required
           >
             <option value="">Select Hobby Category</option>
@@ -112,7 +114,7 @@ const UpdateGroup = () => {
           <textarea
             name="description"
             defaultValue={description}
-            className="w-full border bg-white text-red-500 border-red-300 focus:outline-none focus:ring-1 focus:ring-red-300 p-2 rounded-md"
+            className="w-full border bg-white text-red-500 border-red-300 focus:outline-none focus:ring-1 focus:ring-red-300 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:focus:ring-gray-500 p-2 rounded-md"
             required
           />
 
@@ -120,7 +122,7 @@ const UpdateGroup = () => {
             type="text"
             name="meetingLocation"
             defaultValue={meetingLocation}
-            className="w-full border bg-white text-red-500 border-red-300 focus:outline-none focus:ring-1 focus:ring-red-300 p-2 rounded-md"
+            className="w-full border bg-white text-red-500 border-red-300 focus:outline-none focus:ring-1 focus:ring-red-300 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:focus:ring-gray-500 p-2 rounded-md"
             required
           />
 
@@ -128,7 +130,7 @@ const UpdateGroup = () => {
             type="number"
             name="maxMembers"
             defaultValue={maxMembers}
-            className="w-full border bg-white text-red-500 border-red-300 focus:outline-none focus:ring-1 focus:ring-red-300 p-2 rounded-md"
+            className="w-full border bg-white text-red-500 border-red-300 focus:outline-none focus:ring-1 focus:ring-red-300 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:focus:ring-gray-500 p-2 rounded-md"
             required
           />
 
@@ -136,7 +138,7 @@ const UpdateGroup = () => {
             type="date"
             name="startDate"
             defaultValue={startDate}
-            className="w-full border bg-white text-red-500 border-red-300 focus:outline-none focus:ring-1 focus:ring-red-300 p-2 rounded-md"
+            className="w-full border bg-white text-red-500 border-red-300 focus:outline-none focus:ring-1 focus:ring-red-300 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:focus:ring-gray-500 p-2 rounded-md"
             required
           />
 
@@ -144,7 +146,7 @@ const UpdateGroup = () => {
             type="url"
             name="imageUrl"
             defaultValue={imageUrl}
-            className="w-full border bg-white text-red-500 border-red-300 focus:outline-none focus:ring-1 focus:ring-red-300 p-2 rounded-md"
+            className="w-full border bg-white text-red-500 border-red-300 focus:outline-none focus:ring-1 focus:ring-red-300 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:focus:ring-gray-500 p-2 rounded-md"
             required
           />
 
@@ -153,7 +155,7 @@ const UpdateGroup = () => {
             name="userName"
             value={user.displayName}
             readOnly
-            className="w-full border bg-gray-100 text-red-500 border-red-300 focus:outline-none focus:ring-1 focus:ring-red-300 p-2 rounded-md"
+            className="w-full border bg-gray-100 text-red-500 border-red-300 focus:outline-none focus:ring-1 focus:ring-red-300 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:focus:ring-gray-500 p-2 rounded-md"
           />
 
           <input
@@ -161,12 +163,12 @@ const UpdateGroup = () => {
             name="userEmail"
             value={user.email}
             readOnly
-            className="w-full border bg-gray-100 text-red-500 border-red-300 focus:outline-none focus:ring-1 focus:ring-red-300 p-2 rounded-md"
+            className="w-full border bg-gray-100 text-red-500 border-red-300 focus:outline-none focus:ring-1 focus:ring-red-300 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:focus:ring-gray-500 p-2 rounded-md"
           />
 
           <button
             type="submit"
-            className="btn bg-[#ff0000] text-white hover:bg-white hover:text-[#ff0000] border border-[#ff0000] w-full mt-4"
+            className="btn bg-[#ff0000] text-white hover:bg-white hover:text-[#ff0000] border border-[#ff0000] dark:bg-gray-600 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white dark:border-gray-500 w-full mt-4"
           >
             Update Group
           </button>

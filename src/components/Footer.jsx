@@ -7,25 +7,25 @@ const Footer = () => {
       <div className="w-11/12 mx-auto flex flex-col items-center justify-center gap-8">
         <div className="flex items-center gap-4">
           <img src="/logo.png" alt="logo" className="w-[45px] md:w-[60px]" />
-          <h2 className="text-2xl md:text-4xl font-bold text-[#ff0000] font-malvie">
+          <h2 className="text-2xl md:text-4xl font-bold text-[#ff0000] dark:text-white font-malvie">
             HobbyHub
           </h2>
         </div>
-        <ul className="flex flex-col md:flex-row items-center justify-center gap-7 md:gap-12 text-[rgba(15,15,15,0.7)] text-lg font-medium ">
-          <li className="text-[#ff0000]">
+        <ul className="flex flex-col md:flex-row items-center justify-center gap-7 md:gap-12 text-gray-700 dark:text-gray-300 text-lg font-medium ">
+          <li className="text-[#ff0000] dark:text-white">
             <NavLink to="/">Home</NavLink>
           </li>
-          <li className="text-[#ff0000]">
+          <li className="text-[#ff0000] dark:text-white">
             <NavLink to="/allGroups">All Groups</NavLink>
           </li>
-          <li className="text-[#ff0000]">
+          <li className="text-[#ff0000] dark:text-white">
             <NavLink to="/createGroup">Create Group</NavLink>
           </li>
-          <li className="text-[#ff0000]">
+          <li className="text-[#ff0000] dark:text-white">
             <NavLink to="/myGroups">My Groups</NavLink>
           </li>
         </ul>
-        <hr className="w-[330px] md:w-[660px] lg:w-[1061px] border-t border-t-[#cfcfcf]"></hr>
+        <hr className="w-[330px] md:w-[660px] lg:w-[1061px] border-t border-gray-300 dark:border-gray-700"></hr>
         <div className="flex items-center justify-center gap-6">
           <a href="https://www.facebook.com" target="_blank">
             <svg

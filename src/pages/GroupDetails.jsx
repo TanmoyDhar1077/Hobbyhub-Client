@@ -22,7 +22,7 @@ const GroupDetails = () => {
 
           {/* Group Info */}
           <div className="space-y-4 text-gray-800 dark:text-gray-200">
-            <h2 className="text-3xl font-bold text-[#ff0000]">
+            <h2 className="text-3xl font-bold text-[#ff0000] dark:text-white">
               {group.groupName}
             </h2>
             <p>
@@ -75,11 +75,11 @@ const GroupDetails = () => {
             {/* Join Group or Inactive Message */}
             <div className="mt-6">
               {isActive ? (
-                <button className="bg-[#ff0000] text-white py-2 px-6 rounded-full hover:bg-red-600 transition duration-300 cursor-pointer">
+                <button className="bg-[#ff0000] text-white py-2 px-6 rounded-full hover:bg-red-600 dark:bg-gray-600 dark:hover:bg-gray-700 transition duration-300 cursor-pointer">
                   Join Group
                 </button>
               ) : (
-                <p className="text-red-600 font-semibold text-lg">
+                <p className="text-red-600 dark:text-red-400 font-semibold text-lg">
                   This group is no longer active.
                 </p>
               )}

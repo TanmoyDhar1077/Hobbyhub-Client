@@ -21,8 +21,8 @@ const Navbar = () => {
       cancelButtonColor: "#3085d6",
       confirmButtonText: "Yes, logout",
       cancelButtonText: "Cancel",
-      background: "#fff",
-      color: "#333",
+      background: isDark ? "#1f2937" : "#fff",
+      color: isDark ? "#fff" : "#333",
       iconColor: "#ff0000",
     }).then(async (result) => {
       if (result.isConfirmed) {
@@ -34,7 +34,8 @@ const Navbar = () => {
             icon: "success",
             showConfirmButton: false,
             iconColor: "#7fdf4b",
-            // confirmButtonColor: "#ff0000",
+            background: isDark ? "#1f2937" : "#fff",
+            color: isDark ? "#fff" : "#333",
             timer: 2000,
           });
           navigate("/");
@@ -45,6 +46,8 @@ const Navbar = () => {
             icon: "error",
             confirmButtonColor: "#ff0000",
             showConfirmButton: true,
+            background: isDark ? "#1f2937" : "#fff",
+            color: isDark ? "#fff" : "#333",
           });
         }
       }
@@ -52,7 +55,7 @@ const Navbar = () => {
   };
 
   return (
-    <header className="w-full border-b border-[#C6BDBD] fixed bg-white/30 bg-gradient-to-r from-white/30 to-transparent backdrop-blur-[20px] z-50 dark:bg-black dark:text-white">
+    <header className="w-full border-b border-gray-300 dark:border-gray-700 fixed bg-white/80 dark:bg-gray-900/80 backdrop-blur-lg z-50 transition-colors duration-300">
       <nav className="w-11/12 lg:w-10/12 mx-auto">
         <div className="navbar p-0">
           <div className="navbar-start">
@@ -60,15 +63,14 @@ const Navbar = () => {
               <div
                 tabIndex={0}
                 role="button"
-                className="btn bg-white/30 dark:bg-black/30 bg-gradient-to-r from-white/30 to-transparent dark:from-black/30 dark:to-transparent backdrop-blur-[20px] border border-transparent hover:border-red-500 lg:hidden"
+                className="btn bg-white/70 dark:bg-gray-800/70 backdrop-blur-lg border border-gray-200 dark:border-gray-600 hover:border-red-500 lg:hidden transition-colors duration-300"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="h-5 w-5"
+                  className="h-5 w-5 text-red-500 dark:text-white"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
-                  color="red"
                   strokeWidth="2"
                 >
                   <path
@@ -81,12 +83,12 @@ const Navbar = () => {
 
               <ul
                 tabIndex={0}
-                className="flex flex-col gap-3 dropdown-content rounded-box bg-white dark:bg-black mt-3 w-52 p-2 shadow"
+                className="flex flex-col gap-3 dropdown-content rounded-box bg-white dark:bg-gray-800 mt-3 w-52 p-2 shadow-lg border border-gray-200 dark:border-gray-600 transition-colors duration-300"
               >
                 <li>
                   <NavLink
                     to="/"
-                    className="text-[#ff0000] hover:underline"
+                    className="text-[#ff0000] dark:text-white hover:underline"
                   >
                     Home
                   </NavLink>
@@ -94,7 +96,7 @@ const Navbar = () => {
                 <li>
                   <NavLink
                     to="/allGroups"
-                    className="text-[#ff0000] hover:underline"
+                    className="text-[#ff0000] dark:text-white hover:underline"
                   >
                     All Groups
                   </NavLink>
@@ -102,7 +104,7 @@ const Navbar = () => {
                 <li>
                   <NavLink
                     to="/createGroup"
-                    className="text-[#ff0000] hover:underline"
+                    className="text-[#ff0000] dark:text-white hover:underline"
                   >
                     Create Group
                   </NavLink>
@@ -110,7 +112,7 @@ const Navbar = () => {
                 <li>
                   <NavLink
                     to="/myGroups"
-                    className="text-[#ff0000] hover:underline"
+                    className="text-[#ff0000] dark:text-white hover:underline"
                   >
                     My Groups
                   </NavLink>
@@ -123,23 +125,23 @@ const Navbar = () => {
                 alt="Logo"
                 className="w-10 md:w-13 h-10 md:h-13 rounded-full"
               />
-              <span className="hidden sm:inline text-2xl md:text-4xl font-bold text-[#ff0000] font-malvie">
+              <span className="hidden sm:inline text-2xl md:text-4xl font-bold text-[#ff0000] dark:text-white font-malvie">
                 HobbyHub
               </span>
             </Link>
           </div>
           <div className="navbar-center hidden lg:flex">
             <ul className="flex gap-8 text-xl px-1">
-              <li className="text-[#ff0000]">
+              <li className="text-[#ff0000] dark:text-white">
                 <NavLink to="/">Home</NavLink>
               </li>
-              <li className="text-[#ff0000]">
+              <li className="text-[#ff0000] dark:text-white">
                 <NavLink to="/allGroups">All Groups</NavLink>
               </li>
-              <li className="text-[#ff0000]">
+              <li className="text-[#ff0000] dark:text-white">
                 <NavLink to="/createGroup">Create Group</NavLink>
               </li>
-              <li className="text-[#ff0000]">
+              <li className="text-[#ff0000] dark:text-white">
                 <NavLink to="/myGroups">My Groups</NavLink>
               </li>
             </ul>
@@ -147,7 +149,7 @@ const Navbar = () => {
           <div className="navbar-end flex items-center gap-4">
             <button
               onClick={toggleTheme}
-              className=" text-[#ff0000] hover:text-black dark:hover:text-white cursor-pointer transition duration-300"
+              className="text-[#ff0000] dark:text-white hover:text-red-600 dark:hover:text-red-20`0 cursor-pointer transition-all duration-300 p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700"
               aria-label="Toggle theme"
               aria-pressed={isDark ? "true" : "false"}
               title="Toggle Theme"
@@ -161,24 +163,28 @@ const Navbar = () => {
                   <img
                     src={user.photoURL || "/default-avatar.png"}
                     alt="User"
-                    className="w-10 h-10 rounded-full border-2 border-red-500 cursor-pointer"
+                    className="w-10 h-10 rounded-full border-2 border-red-500 cursor-pointer dark:border-gray-400 transition-all duration-300 hover:scale-105"
                   />
                 </div>
                 <Tooltip
                   id="my-tooltip"
                   place="bottom"
                   effect="solid"
-                  style={{ backgroundColor: "#ffffff", color: "#ff0000" }}
+                  style={{ 
+                    backgroundColor: isDark ? "#374151" : "#ffffff", 
+                    color: "#ff0000",
+                    border: isDark ? "1px solid #4b5563" : "1px solid #e5e7eb"
+                  }}
                 >
                   <div className="text-sm text-center">
-                    <p>{user.displayName || "No name"}</p>
-                    <p>{user.email}</p>
+                    <p className="dark:text-gray-300">{user.displayName || "No name"}</p>
+                    <p className="dark:text-gray-300">{user.email}</p>
                   </div>
                 </Tooltip>
 
                 <button
                   onClick={handleLogout}
-                  className="btn bg-[#ff0000] text-white hover:bg-white hover:text-[#ff0000] border border-[#ff0000] px-4 py-2 rounded transition duration-300"
+                  className="btn bg-[#ff0000] text-white hover:bg-white hover:text-[#ff0000] dark:hover:bg-gray-800 dark:hover:text-white border border-[#ff0000] px-4 py-2 rounded transition duration-300"
                 >
                   Logout
                 </button>
@@ -186,7 +192,7 @@ const Navbar = () => {
             ) : (
               <Link
                 to="/signin"
-                className="btn bg-[#ff0000] text-white hover:bg-white hover:text-[#ff0000] border border-[#ff0000] px-4 py-2 rounded transition duration-300"
+                className="btn bg-[#ff0000] text-white hover:bg-white hover:text-[#ff0000] dark:hover:bg-gray-800 dark:hover:text-white border border-[#ff0000] px-4 py-2 rounded transition duration-300"
               >
                 SignUp/SignIn
               </Link>

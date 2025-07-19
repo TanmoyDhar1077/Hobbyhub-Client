@@ -39,7 +39,7 @@ const AllGroups = () => {
     <section className="w-11/12 md:w-10/12 mx-auto text-center">
       <div className="pt-[75px] mb-6">
         {/* Section Title */}
-        <h2 className="text-3xl md:text-4xl font-bold text-[#ff0000] mb-4">
+        <h2 className="text-3xl md:text-4xl font-bold text-[#ff0000] dark:text-white mb-4">
           Explore All Hobby Groups
         </h2>
 
@@ -68,7 +68,7 @@ const AllGroups = () => {
           {filteredGroups.map((group) => (
             <div
               key={group._id}
-              className="flex flex-col bg-[#fff5f5] rounded-2xl shadow-md hover:shadow-xl transition duration-300 overflow-hidden text-left dark:bg-gray-300"
+              className="flex flex-col bg-[#fff5f5] dark:bg-gray-800 rounded-2xl shadow-md hover:shadow-xl transition duration-300 overflow-hidden text-left border border-gray-200 dark:border-gray-700"
             >
               <img
                 src={group.imageUrl}
@@ -77,19 +77,19 @@ const AllGroups = () => {
               />
               <div className="p-5 flex flex-col justify-between flex-1">
                 <div>
-                  <p className="text-sm font-semibold text-[#ff0000] mb-1">
+                  <p className="text-sm font-semibold text-[#ff0000] dark:text-red-400 mb-1">
                     {group.hobbyCategory}
                   </p>
 
-                  <h3 className="text-xl font-bold text-gray-800 mb-2">
+                  <h3 className="text-xl font-bold text-gray-800 dark:text-gray-200 mb-2">
                     {group.groupName}
                   </h3>
 
-                  <p className="text-gray-700 mb-3 line-clamp-2">
+                  <p className="text-gray-700 dark:text-gray-300 mb-3 line-clamp-2">
                     {group.description}
                   </p>
 
-                  <p className="text-gray-600 mb-3">
+                  <p className="text-gray-600 dark:text-gray-400 mb-3">
                     Starting Date: {formatDateToBD(group.startDate)}
                   </p>
 
@@ -97,17 +97,17 @@ const AllGroups = () => {
                     <img
                       src={group.userPhoto}
                       alt={group.userName}
-                      className="w-8 h-8 rounded-full object-cover border"
+                      className="w-8 h-8 rounded-full object-cover border dark:border-gray-600"
                     />
-                    <span className="text-sm text-gray-600 line-clamp-1">
+                    <span className="text-sm text-gray-600 dark:text-gray-400 line-clamp-1">
                       Group Created By:{" "}
-                      <span className="font-medium">{group.userName}</span>
+                      <span className="font-medium text-gray-800 dark:text-gray-200">{group.userName}</span>
                     </span>
                   </div>
                 </div>
 
                 <Link to={`/groupDetails/${group._id}`}>
-                  <button className="mt-auto bg-[#ff0000] text-white py-2 px-4 rounded-full w-full hover:bg-red-600 transition duration-300 cursor-pointer">
+                  <button className="mt-auto bg-[#ff0000] text-white py-2 px-4 rounded-full w-full hover:bg-red-600 dark:bg-gray-600 dark:hover:bg-gray-700 transition duration-300 cursor-pointer">
                     View Details
                   </button>
                 </Link>

@@ -27,6 +27,8 @@ const Login = () => {
           title: `Welcome ${user.displayName}`,
           showConfirmButton: false,
           timer: 1500,
+          background: document.documentElement.classList.contains('dark') ? "#1f2937" : "#fff",
+          color: document.documentElement.classList.contains('dark') ? "#fff" : "#333",
         });
         navigate(from, { replace: true });
       })
@@ -36,6 +38,8 @@ const Login = () => {
           icon: "error",
           title: "Oops...",
           text: `Something went wrong! ${error.message}`,
+          background: document.documentElement.classList.contains('dark') ? "#1f2937" : "#fff",
+          color: document.documentElement.classList.contains('dark') ? "#fff" : "#333",
         });
       });
   };
@@ -56,6 +60,8 @@ const Login = () => {
           title: `Welcome back ${user.displayName}`,
           showConfirmButton: false,
           timer: 1500,
+          background: document.documentElement.classList.contains('dark') ? "#1f2937" : "#fff",
+          color: document.documentElement.classList.contains('dark') ? "#fff" : "#333",
         });
         navigate(from, { replace: true });
       })
@@ -65,6 +71,8 @@ const Login = () => {
           icon: "error",
           title: "Oops...",
           text: `Something went wrong! ${error.message}`,
+          background: document.documentElement.classList.contains('dark') ? "#1f2937" : "#fff",
+          color: document.documentElement.classList.contains('dark') ? "#fff" : "#333",
         });
       });
   };
@@ -72,17 +80,17 @@ const Login = () => {
   return (
     <section>
       <div className="flex flex-col items-center justify-center min-h-screen px-4 lg:px-0 py-22 lg:py-0">
-        <div className="w-full max-w-6xl bg-white shadow-lg rounded-xl overflow-hidden grid grid-cols-1 md:grid-cols-2 gap-10">
-          <div className="md:flex items-center justify-center bg-red-100">
+        <div className="w-full max-w-6xl bg-white dark:bg-gray-800 shadow-lg rounded-xl overflow-hidden grid grid-cols-1 md:grid-cols-2 gap-10 border border-gray-200 dark:border-gray-600">
+          <div className="md:flex items-center justify-center bg-red-100 dark:bg-gray-700">
             <img src={signIn} alt="SignIn Logo" className="w-full max-w-md" />
           </div>
           <div className="p-10">
-            <h1 className="text-3xl font-bold text-red-500 mb-6 text-center">
+            <h1 className="text-3xl font-bold text-red-500 dark:text-white mb-6 text-center">
               Sign In
             </h1>
             <button
               onClick={handleGoogleSignIn}
-              className="w-full flex items-center justify-center gap-2 bg-white border border-red-300 shadow-sm py-2 rounded-md text-red-500 hover:bg-red-500 hover:text-white mb-6 cursor-pointer transition duration-200"
+              className="w-full flex items-center justify-center gap-2 bg-white dark:bg-gray-700 border border-red-300 dark:border-gray-600 shadow-sm py-2 rounded-md text-red-500 dark:text-white hover:bg-red-500 hover:text-white dark:hover:bg-red-500 dark:hover:text-white mb-6 cursor-pointer transition duration-200"
             >
               <FaGoogle /> Log in with Google
             </button>
@@ -91,7 +99,7 @@ const Login = () => {
                 type="email"
                 name="email"
                 placeholder="Email"
-                className="w-full border text-red-500 border-red-300 focus:outline-none focus:ring-1 focus:ring-red-300 p-2 rounded-md"
+                className="w-full border text-red-500 dark:text-white border-red-300 dark:border-gray-600 bg-white dark:bg-gray-700 focus:outline-none focus:ring-1 focus:ring-red-300 dark:focus:ring-red-400 p-2 rounded-md placeholder-gray-500 dark:placeholder-gray-400"
                 required
               />
               <div className="relative">
@@ -99,17 +107,17 @@ const Login = () => {
                   type={showPassword ? "text" : "password"}
                   name="password"
                   placeholder="Password"
-                  className="w-full  text-red-500 border border-red-300 focus:outline-none focus:ring-1 focus:ring-red-300 p-2 rounded-md"
+                  className="w-full text-red-500 dark:text-white border border-red-300 dark:border-gray-600 bg-white dark:bg-gray-700 focus:outline-none focus:ring-1 focus:ring-red-300 dark:focus:ring-red-400 p-2 rounded-md placeholder-gray-500 dark:placeholder-gray-400"
                   required
                 />
                 <span
                   onClick={() => setShowPassword(!showPassword)}
-                  className="absolute right-3 top-3 cursor-pointer text-gray-500"
+                  className="absolute right-3 top-3 cursor-pointer text-gray-500 dark:text-gray-400"
                 >
                   {showPassword ? (
-                    <FaEyeSlash size={20} className="text-red-400" />
+                    <FaEyeSlash size={20} className="text-red-400 dark:text-white" />
                   ) : (
-                    <FaEye size={20} className="text-red-400" />
+                    <FaEye size={20} className="text-red-400 dark:text-white" />
                   )}
                 </span>
               </div>
@@ -120,12 +128,12 @@ const Login = () => {
                 >
                   Forgot Password?
                 </button>
-                <p className="text-black">
+                <p className="text-black dark:text-gray-300">
                   Create a new account?{" "}
                   <span
                     type="button"
                     onClick={() => navigate("/signup")}
-                    className="hover:underline cursor-pointer text-red-500"
+                    className="hover:underline cursor-pointer text-red-500 dark:text-white"
                   >
                     Sign Up
                   </span>
@@ -133,7 +141,7 @@ const Login = () => {
               </div>
               <button
                 type="submit"
-                className="w-full bg-[#ff0000] text-white hover:bg-white hover:text-[#ff0000] border border-[#ff0000] px-4 py-2 rounded transition duration-300 cursor-pointer"
+                className="w-full bg-[#ff0000] text-white hover:bg-white hover:text-[#ff0000] dark:hover:bg-gray-700 dark:hover:text-white border border-[#ff0000] px-4 py-2 rounded transition duration-300 cursor-pointer"
               >
                 Login
               </button>

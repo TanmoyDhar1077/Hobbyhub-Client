@@ -45,6 +45,8 @@ const Register = () => {
         icon: "error",
         title: "Invalid Password",
         text: errorMsg,
+        background: document.documentElement.classList.contains('dark') ? "#1f2937" : "#fff",
+        color: document.documentElement.classList.contains('dark') ? "#fff" : "#333",
       });
       return;
     }
@@ -66,6 +68,8 @@ const Register = () => {
         text: `Welcome, ${name}`,
         timer: 1500,
         showConfirmButton: false,
+        background: document.documentElement.classList.contains('dark') ? "#1f2937" : "#fff",
+        color: document.documentElement.classList.contains('dark') ? "#fff" : "#333",
       });
 
       navigate("/");
@@ -74,6 +78,8 @@ const Register = () => {
         icon: "error",
         title: "Registration Failed",
         text: error.message,
+        background: document.documentElement.classList.contains('dark') ? "#1f2937" : "#fff",
+        color: document.documentElement.classList.contains('dark') ? "#fff" : "#333",
       });
     }
   };
@@ -89,6 +95,8 @@ const Register = () => {
           title: `Welcome ${user.displayName}`,
           showConfirmButton: false,
           timer: 1500,
+          background: document.documentElement.classList.contains('dark') ? "#1f2937" : "#fff",
+          color: document.documentElement.classList.contains('dark') ? "#fff" : "#333",
         });
         navigate("/");
       })
@@ -98,6 +106,8 @@ const Register = () => {
           icon: "error",
           title: "Oops...",
           text: `Something went wrong! ${error.message}`,
+          background: document.documentElement.classList.contains('dark') ? "#1f2937" : "#fff",
+          color: document.documentElement.classList.contains('dark') ? "#fff" : "#333",
         });
       });
   };
@@ -105,18 +115,18 @@ const Register = () => {
   return (
     <section>
       <div className="flex flex-col items-center justify-center min-h-screen px-4 lg:px-0 py-22 lg:py-0">
-        <div className="w-full max-w-6xl bg-white shadow-lg rounded-xl overflow-hidden grid grid-cols-1 md:grid-cols-2 gap-10">
-          <div className="md:flex items-center justify-center bg-red-100">
+        <div className="w-full max-w-6xl bg-white dark:bg-gray-800 shadow-lg rounded-xl overflow-hidden grid grid-cols-1 md:grid-cols-2 gap-10 border border-gray-200 dark:border-gray-600">
+          <div className="md:flex items-center justify-center bg-red-100 dark:bg-gray-700">
             <img src={signUpImg} alt="SignUp" className="w-full max-w-md" />
           </div>
           <div className="p-10">
-            <h1 className="text-3xl font-bold text-red-500 mb-6 text-center">
+            <h1 className="text-3xl font-bold text-red-500 dark:text-white mb-6 text-center">
               Create Account
             </h1>
 
             <button
               onClick={handleGoogleSignIn}
-              className="w-full flex items-center justify-center gap-2 bg-white border border-red-300 shadow-sm py-2 rounded-md text-red-500 hover:bg-red-500 hover:text-white mb-6 cursor-pointer transition duration-200"
+              className="w-full flex items-center justify-center gap-2 bg-white dark:bg-gray-700 border border-red-300 dark:border-gray-600 shadow-sm py-2 rounded-md text-red-500 dark:text-white hover:bg-red-500 hover:text-white dark:hover:bg-red-500 dark:hover:text-white mb-6 cursor-pointer transition duration-200"
             >
               <FaGoogle /> Sign Up with Google
             </button>
@@ -129,7 +139,7 @@ const Register = () => {
                 value={formData.name}
                 onChange={handleChange}
                 required
-                className="w-full border text-red-500 border-red-300 focus:outline-none focus:ring-1 focus:ring-red-300 p-2 rounded-md"
+                className="w-full border text-red-500 dark:text-white border-red-300 dark:border-gray-600 bg-white dark:bg-gray-700 focus:outline-none focus:ring-1 focus:ring-red-300 dark:focus:ring-red-400 p-2 rounded-md placeholder-gray-500 dark:placeholder-gray-400"
               />
               <input
                 type="tel"
@@ -138,7 +148,7 @@ const Register = () => {
                 value={formData.phone}
                 onChange={handleChange}
                 required
-                className="w-full border text-red-500 border-red-300 focus:outline-none focus:ring-1 focus:ring-red-300 p-2 rounded-md"
+                className="w-full border text-red-500 dark:text-white border-red-300 dark:border-gray-600 bg-white dark:bg-gray-700 focus:outline-none focus:ring-1 focus:ring-red-300 dark:focus:ring-red-400 p-2 rounded-md placeholder-gray-500 dark:placeholder-gray-400"
               />
               <input
                 type="email"
@@ -147,7 +157,7 @@ const Register = () => {
                 value={formData.email}
                 onChange={handleChange}
                 required
-                className="w-full border text-red-500 border-red-300 focus:outline-none focus:ring-1 focus:ring-red-300 p-2 rounded-md"
+                className="w-full border text-red-500 dark:text-white border-red-300 dark:border-gray-600 bg-white dark:bg-gray-700 focus:outline-none focus:ring-1 focus:ring-red-300 dark:focus:ring-red-400 p-2 rounded-md placeholder-gray-500 dark:placeholder-gray-400"
               />
               <input
                 type="text"
@@ -156,7 +166,7 @@ const Register = () => {
                 value={formData.photoURL}
                 onChange={handleChange}
                 required
-                className="w-full border text-red-500 border-red-300 focus:outline-none focus:ring-1 focus:ring-red-300 p-2 rounded-md"
+                className="w-full border text-red-500 dark:text-white border-red-300 dark:border-gray-600 bg-white dark:bg-gray-700 focus:outline-none focus:ring-1 focus:ring-red-300 dark:focus:ring-red-400 p-2 rounded-md placeholder-gray-500 dark:placeholder-gray-400"
               />
 
               <div className="relative">
@@ -167,22 +177,22 @@ const Register = () => {
                   value={formData.password}
                   onChange={handleChange}
                   required
-                  className="w-full border text-red-500 border-red-300 focus:outline-none focus:ring-1 focus:ring-red-300 p-2 rounded-md"
+                  className="w-full border text-red-500 dark:text-white border-red-300 dark:border-gray-600 bg-white dark:bg-gray-700 focus:outline-none focus:ring-1 focus:ring-red-300 dark:focus:ring-red-400 p-2 rounded-md placeholder-gray-500 dark:placeholder-gray-400"
                 />
                 <span
                   onClick={() => setShowPassword(!showPassword)}
-                  className="absolute right-3 top-3 cursor-pointer text-gray-500"
+                  className="absolute right-3 top-3 cursor-pointer text-gray-500 dark:text-gray-400"
                 >
                   {showPassword ? (
-                    <FaEyeSlash size={20} className="text-red-400" />
+                    <FaEyeSlash size={20} className="text-red-400 dark:text-white" />
                   ) : (
-                    <FaEye size={20} className="text-red-400" />
+                    <FaEye size={20} className="text-red-400 dark:text-white" />
                   )}
                 </span>
               </div>
 
-              <div className="flex gap-6 text-red-500 text-sm">
-                <label>
+              <div className="flex gap-6 text-red-500 dark:text-white text-sm">
+                <label className="dark:text-white">
                   <input
                     type="radio"
                     name="gender"
@@ -192,7 +202,7 @@ const Register = () => {
                   />{" "}
                   Male
                 </label>
-                <label>
+                <label className="dark:text-red-400">
                   <input
                     type="radio"
                     name="gender"
@@ -202,7 +212,7 @@ const Register = () => {
                   />{" "}
                   Female
                 </label>
-                <label>
+                <label className="dark:text-red-400">
                   <input
                     type="radio"
                     name="gender"
@@ -216,15 +226,15 @@ const Register = () => {
 
               <button
                 type="submit"
-                className="w-full bg-[#ff0000] text-white hover:bg-white hover:text-[#ff0000] border border-[#ff0000] px-4 py-2 rounded transition duration-300 cursor-pointer"
+                className="w-full bg-[#ff0000] text-white hover:bg-white hover:text-[#ff0000] dark:hover:bg-gray-700 dark:hover:text-white border border-[#ff0000] px-4 py-2 rounded transition duration-300 cursor-pointer"
               >
                 Register
               </button>
 
-              <p className="text-black text-sm mt-2">
+              <p className="text-black dark:text-gray-300 text-sm mt-2">
                 Already have an account?{" "}
                 <span
-                  className="text-red-500 hover:underline cursor-pointer"
+                  className="text-red-500 dark:text-white hover:underline cursor-pointer"
                   onClick={() => navigate("/signin")}
                 >
                   Sign In

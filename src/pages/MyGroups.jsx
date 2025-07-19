@@ -31,8 +31,8 @@ const MyGroups = () => {
       cancelButtonColor: "#3085d6",
       confirmButtonText: "Yes, Delete it!",
       cancelButtonText: "Cancel",
-      background: "#fff",
-      color: "#333",
+      background: document.documentElement.classList.contains('dark') ? '#374151' : '#fff',
+      color: document.documentElement.classList.contains('dark') ? '#ffffff' : '#333',
       iconColor: "#ff0000",
     }).then((result) => {
       if (result.isConfirmed) {
@@ -49,6 +49,8 @@ const MyGroups = () => {
                 showConfirmButton: false,
                 iconColor: "#7fdf4b",
                 timer: 2000,
+                background: document.documentElement.classList.contains('dark') ? '#374151' : '#ffffff',
+                color: document.documentElement.classList.contains('dark') ? '#ffffff' : '#333333',
               });
               const remainingGroups = myGroups.filter(
                 (group) => group._id !== id
@@ -62,12 +64,12 @@ const MyGroups = () => {
 
   return (
     <section className="pt-[80px] w-11/12 mx-auto">
-      <h2 className="text-3xl font-bold text-center mb-6 text-[#ff0000]">
+      <h2 className="text-3xl font-bold text-center mb-6 text-[#ff0000] dark:text-white">
         My Created Groups
       </h2>
       <div className="overflow-x-auto">
-        <table className="w-11/12 mx-auto bg-white shadow-md rounded-lg overflow-hidden mb-6">
-          <thead className="bg-[#ff0000] text-white">
+        <table className="w-11/12 mx-auto bg-white dark:bg-gray-800 shadow-md rounded-lg overflow-hidden mb-6">
+          <thead className="bg-[#ff0000] dark:bg-gray-700 text-white">
             <tr>
               <th className="py-3 px-4 text-left">SL.</th>
               <th className="py-3 px-4 text-left">Group Name</th>
@@ -82,7 +84,7 @@ const MyGroups = () => {
             {myGroups.map((group, index) => (
               <tr
                 key={group._id}
-                className="border-t text-[#ff0000] hover:bg-red-50 transition"
+                className="border-t text-[#ff0000] dark:text-gray-300 dark:border-gray-700 hover:bg-red-50 dark:hover:bg-gray-700 transition"
               >
                 <td className="py-3 px-4">{index + 1}</td>
                 <td className="py-3 px-4">{group.groupName}</td>
