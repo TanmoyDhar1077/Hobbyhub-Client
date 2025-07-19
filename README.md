@@ -270,19 +270,6 @@ yarn build
 
 ---
 
-## 📋 Pages Overview
-
-- `/` — Home (with Banner, Featured Groups, and Static Sections)
-- `/login` — Login Page
-- `/register` — Register Page
-- `/groups` — View All Groups
-- `/group/:id` — Group Details (Join or View Only)
-- `/createGroup` — Create New Group
-- `/myGroups` — User’s Created Groups (Edit/Delete)
-- `/updateGroup/:id` — Update Group Info
-- `*` — 404 Not Found
-
----
 
 ## 🔒 Environment Variables
 
