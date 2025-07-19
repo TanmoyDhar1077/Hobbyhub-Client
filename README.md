@@ -121,7 +121,7 @@ module.exports = {
 
 ## 📁 Project Structure
 
-```
+```bash
 HobbyHub-Client/
 ├── 📁 public/
 │   ├── 🖼️ logo.png
