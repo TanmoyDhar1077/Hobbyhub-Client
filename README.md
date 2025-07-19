@@ -2,7 +2,12 @@
 
 🌐 **Live Site**: [https://hobbyhub-tanmoy.netlify.app/](https://hobbyhub-tanmoy.netlify.app/)
 
-HobbyHub is a dynamic platform designed to connect people through shared interests by## 📋 Pages Overview
+## 📖 Overview
+HobbyHub is a dynamic platform designed to connect people through shared interests by allowing users to discover, join, or create local hobby-based groups. Whether it's reading, hiking, painting, or cooking, HobbyHub fosters real-world communities for real-world passions.
+
+---
+
+## 📋 Pages Overview
 
 | Route | Page | Description | Protected |
 |-------|------|-------------|-----------|
@@ -44,7 +49,7 @@ module.exports = {
   darkMode: 'class',
   plugins: [require('daisyui')]
 }
-```em discover, join, or create local hobby-based groups. Whether it's reading, hiking, painting, or cooking, HobbyHub fosters real-world communities for real-world passions.
+```
 
 ---
 
@@ -372,7 +377,7 @@ This project is developed as part of a course assignment and is not licensed for
 
 ## 🌟 Acknowledgments
 
-- **Programming Hero** - For providing excellent learning resources
+<!-- - **Programming Hero** - For providing excellent learning resources -->
 - **Firebase** - For robust authentication services
 - **Tailwind CSS** - For the amazing utility-first CSS framework
 - **DaisyUI** - For beautiful pre-built components
