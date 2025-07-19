@@ -15,7 +15,7 @@ HobbyHub is a dynamic platform designed to connect people through shared interes
 | `/signin` | 🔐 **Login** | User authentication with email/password and Google | ❌ |
 | `/signup` | 📝 **Register** | User registration with form validation | ❌ |
 | `/allGroups` | 📋 **All Groups** | Browse all groups with search and filter | ❌ |
-| `/groupDetails/:id` | 📖 **Group Details** | Individual group information and join option | ❌ |
+| `/groupDetails/:id` | 📖 **Group Details** | Individual group information and join option | ✅ |
 | `/createGroup` | ➕ **Create Group** | Form to create new hobby group | ✅ |
 | `/myGroups` | 👤 **My Groups** | User's created groups with edit/delete options | ✅ |
 | `/updateGroup/:id` | ✏️ **Update Group** | Edit existing group information | ✅ |
